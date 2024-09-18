@@ -577,7 +577,7 @@ public:
             colourLabel.setColour (juce::Label::textWhenEditingColourId, textColour);
             colourLabel.setText (currentColour.toDisplayString ((owner.flags & showAlphaChannel) != 0), juce::dontSendNotification);
 
-            labelWidth = labelFont.getStringWidth (colourLabel.getText());
+            labelWidth = juce::GlyphArrangement::getStringWidthInt ( labelFont, colourLabel.getText () );
 
             repaint();
         }
